@@ -14,6 +14,7 @@ use App\Services\Payments\OrderPayments;
 use App\Services\Payments\PaymentGatewayException;
 use App\Services\Payments\StripeCheckout;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class CheckoutController extends Controller
 {
@@ -111,7 +112,7 @@ class CheckoutController extends Controller
             if ($item->variant) {
                 try {
                     $carts->add($item->variant, $item->quantity);
-                } catch (\Illuminate\Validation\ValidationException) {
+                } catch (ValidationException) {
                     // Item no longer available in that quantity; the cart page will explain.
                 }
             }

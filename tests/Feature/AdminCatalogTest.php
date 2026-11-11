@@ -5,7 +5,9 @@ namespace Tests\Feature;
 use App\Enums\ProductStatus;
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Page;
 use App\Models\Product;
+use Database\Seeders\StoreContentSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -135,9 +137,9 @@ class AdminCatalogTest extends TestCase
 
     public function test_pages_and_homepage_are_editable_and_sanitized(): void
     {
-        $this->seed(\Database\Seeders\StoreContentSeeder::class);
+        $this->seed(StoreContentSeeder::class);
         $manager = $this->user('manager');
-        $page = \App\Models\Page::query()->where('slug', 'faq')->sole();
+        $page = Page::query()->where('slug', 'faq')->sole();
 
         $this->actingAs($manager)->put(route('admin.pages.update', $page), [
             'title' => 'FAQ', 'body' => '<p>Updated <a href="javascript:alert(1)">x</a></p><img src=x onerror=alert(1)>', 'is_published' => '1', 'show_in_footer' => '1',

@@ -3,9 +3,11 @@
 namespace Tests\Feature;
 
 use App\Enums\ProductStatus;
+use App\Mail\ContactMessageReceived;
 use App\Models\Product;
 use Database\Seeders\StoreContentSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Mail;
 use Tests\Concerns\BuildsStore;
 use Tests\TestCase;
 
@@ -94,10 +96,10 @@ class StorefrontTest extends TestCase
 
     public function test_contact_form_stores_and_emails_message(): void
     {
-        \Illuminate\Support\Facades\Mail::fake();
+        Mail::fake();
         $this->post('/contact-us', ['name' => 'Ann', 'email' => 'ann@example.com', 'message' => 'Hello'])->assertRedirect('/contact-us');
         $this->assertDatabaseHas('contact_messages', ['email' => 'ann@example.com']);
-        \Illuminate\Support\Facades\Mail::assertQueued(\App\Mail\ContactMessageReceived::class);
+        Mail::assertQueued(ContactMessageReceived::class);
     }
 
     public function test_contact_honeypot_drops_spam(): void

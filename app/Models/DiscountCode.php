@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\DiscountType;
 use App\Enums\PaymentStatus;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -26,9 +27,9 @@ class DiscountCode extends Model
         ];
     }
 
-    protected function code(): \Illuminate\Database\Eloquent\Casts\Attribute
+    protected function code(): Attribute
     {
-        return \Illuminate\Database\Eloquent\Casts\Attribute::make(
+        return Attribute::make(
             set: fn (?string $value) => $value === null ? null : strtoupper(trim($value)),
         );
     }

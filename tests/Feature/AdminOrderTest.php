@@ -6,6 +6,7 @@ use App\Enums\FulfillmentStatus;
 use App\Enums\PaymentStatus;
 use App\Mail\OrderShipped;
 use App\Models\Order;
+use App\Services\Payments\StripeCheckout;
 use App\Services\Settings;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
@@ -15,6 +16,8 @@ use Tests\TestCase;
 class AdminOrderTest extends TestCase
 {
     use BuildsStore, RefreshDatabase;
+
+    private \App\Models\ProductVariant $item;
 
     protected function setUp(): void
     {
@@ -31,7 +34,7 @@ class AdminOrderTest extends TestCase
         $this->post('/checkout', $this->checkoutData($method));
         $order = Order::query()->latest('id')->first();
         $this->stripe->complete($order->stripe_checkout_session_id);
-        app(\App\Services\Payments\StripeCheckout::class)->refresh($order);
+        app(StripeCheckout::class)->refresh($order);
         $this->flushSession();
 
         return $order->fresh();

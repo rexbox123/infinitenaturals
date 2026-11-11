@@ -7,6 +7,7 @@ use App\Models\ProductVariant;
 use App\Models\ShippingMethod;
 use App\Models\User;
 use App\Services\Payments\StripeApi;
+use Illuminate\Testing\TestResponse;
 use Tests\Fakes\FakeStripeApi;
 
 trait BuildsStore
@@ -70,7 +71,7 @@ trait BuildsStore
     }
 
     /** Build a Stripe-Signature header exactly like Stripe does. */
-    protected function signedWebhook(array $event): \Illuminate\Testing\TestResponse
+    protected function signedWebhook(array $event): TestResponse
     {
         $payload = json_encode($event);
         $timestamp = time();

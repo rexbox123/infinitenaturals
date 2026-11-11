@@ -2,7 +2,9 @@
 
 namespace App\Services\Checkout;
 
+use App\Enums\DiscountType;
 use App\Models\DiscountCode;
+use App\Models\ProductVariant;
 use App\Models\ShippingMethod;
 use App\Models\TaxRate;
 use Illuminate\Support\Collection;
@@ -20,7 +22,7 @@ use Illuminate\Support\Collection;
 class PriceCalculator
 {
     /**
-     * @param  Collection<int, array{variant: \App\Models\ProductVariant, quantity: int}>  $lines
+     * @param  Collection<int, array{variant: ProductVariant, quantity: int}>  $lines
      */
     public function calculate(
         Collection $lines,
@@ -39,7 +41,7 @@ class PriceCalculator
             $discountMessage = $discount->unavailableReason($subtotal, $email);
             if ($discountMessage === null) {
                 $discountAmount = $discount->amountFor($subtotal);
-                $freeShipping = $discount->type === \App\Enums\DiscountType::FreeShipping;
+                $freeShipping = $discount->type === DiscountType::FreeShipping;
             }
         }
 

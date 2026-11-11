@@ -8,6 +8,7 @@ use App\Models\ProductVariant;
 use App\Support\Money;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ShopController extends Controller
 {
@@ -101,7 +102,7 @@ class ShopController extends Controller
             && ($max === null || $p->current_price <= $max))->values();
         $perPage = config('store.products_per_page');
         $page = max(1, (int) $request->query('page', 1));
-        $products = new \Illuminate\Pagination\LengthAwarePaginator(
+        $products = new LengthAwarePaginator(
             $all->forPage($page, $perPage)->values(), $all->count(), $perPage, $page,
             ['path' => $request->url(), 'query' => $request->query()],
         );
