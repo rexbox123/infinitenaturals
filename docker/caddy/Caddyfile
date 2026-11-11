@@ -1,0 +1,11 @@
+# Automatic HTTPS (Let's Encrypt) in front of the app container.
+# Set APP_DOMAIN in .env (e.g. www.infinitenaturals.com) and point DNS at this server.
+{$APP_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy app:8080
+}
+
+# Optional: redirect the bare domain to www.
+# infinitenaturals.com {
+#     redir https://www.infinitenaturals.com{uri} permanent
+# }
