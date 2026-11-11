@@ -21,7 +21,7 @@
     @endif
 
     <div class="grid gap-6 xl:grid-cols-[1fr_380px]">
-        <div class="space-y-6">
+        <div class="min-w-0 space-y-6">
             <x-admin.card title="Items">
                 <div class="-m-5 overflow-x-auto">
                     <table class="min-w-full text-sm">
@@ -50,7 +50,7 @@
             </x-admin.card>
 
             @can('orders.manage')
-                <x-admin.card title="Fulfilment &amp; tracking">
+                <x-admin.card title="Fulfilment & tracking">
                     @if ($order->fulfillment_status->value === 'cancelled')
                         <p class="text-sm text-stone-600">This order is cancelled.</p>
                     @else
@@ -102,7 +102,7 @@
             </x-admin.card>
         </div>
 
-        <div class="space-y-6">
+        <div class="min-w-0 space-y-6">
             <x-admin.card title="Status">
                 <dl class="space-y-2 text-sm">
                     <div class="flex justify-between"><dt>Payment</dt><dd><x-admin.badge :color="$order->payment_status->color()">{{ $order->payment_status->label() }}</x-admin.badge></dd></div>

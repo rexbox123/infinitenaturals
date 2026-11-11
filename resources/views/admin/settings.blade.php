@@ -16,7 +16,7 @@
             </div>
         </x-admin.card>
 
-        <x-admin.card title="Contact &amp; notifications">
+        <x-admin.card title="Contact & notifications">
             <div class="grid gap-4">
                 <x-admin.field name="store_email" label="Public email" type="email" :value="$s('store.email')" required help="Shown on the site; contact-form messages are sent here." />
                 <x-admin.field name="store_phone" label="Phone" :value="$s('store.phone')" />
@@ -42,7 +42,7 @@
             </div>
         </x-admin.card>
 
-        <x-admin.card title="Checkout &amp; inventory">
+        <x-admin.card title="Checkout & inventory">
             <div class="space-y-4">
                 <x-admin.checkbox name="checkout_require_terms" label="Require customers to accept the terms at checkout" :checked="(bool) $s('checkout.require_terms')" />
                 <x-admin.field name="inventory_low_stock_threshold" label="Low-stock alert level" type="number" min="0" :value="$s('inventory.low_stock_threshold')" required />

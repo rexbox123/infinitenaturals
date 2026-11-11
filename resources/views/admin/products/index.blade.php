@@ -23,7 +23,7 @@
             <tr class="hover:bg-stone-50">
                 <td class="px-4 py-3">
                     <div class="flex items-center gap-3">
-                        <div class="h-12 w-12 shrink-0 overflow-hidden rounded bg-gold-50"><x-store.product-image :product="$product" class="h-full w-full object-cover text-[0px]" /></div>
+                        <div class="h-12 w-12 shrink-0 overflow-hidden rounded bg-gold-50"><x-store.product-image :product="$product" class="h-full w-full object-cover" compact /></div>
                         <div>
                             <a href="{{ route('admin.products.edit', $product) }}" class="font-semibold text-ink hover:text-umber-700">{{ $product->name }}</a>
                             <span class="block text-xs text-stone-500">{{ $v->count() }} {{ Str::plural('variant', $v->count()) }} · SKU {{ $v->pluck('sku')->filter()->implode(', ') ?: '—' }}</span>

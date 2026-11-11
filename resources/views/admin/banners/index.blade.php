@@ -1,4 +1,4 @@
-<x-admin-layout title="Banners &amp; promotions">
+<x-admin-layout title="Banners & promotions">
     @foreach (\App\Models\Banner::PLACEMENTS as $placement => $label)
         <x-admin.card :title="$label" class="mb-6">
             <x-slot:actions><a href="{{ route('admin.banners.create', ['placement' => $placement]) }}" class="btn-outline btn-sm">Add</a></x-slot:actions>

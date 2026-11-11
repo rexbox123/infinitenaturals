@@ -60,12 +60,16 @@
             </div>
             <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
                 @foreach ($categories as $cat)
-                    @php($sample = $cat->imageUrl() ? null : $cat->products()->visible()->with('primaryImage')->orderByDesc('is_featured')->first())
+                    @php($sample = $cat->imageUrl() ? null : $cat->products()->visible()->has('images')->with('primaryImage')->orderByDesc('is_featured')->first())
                     <a href="{{ route('category.show', $cat) }}" class="group relative block aspect-square overflow-hidden rounded-xl bg-gold-50">
                         @if ($cat->imageUrl())
                             <img src="{{ $cat->imageUrl() }}" alt="" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
                         @elseif ($sample)
                             <x-store.product-image :product="$sample" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                        @else
+                            <div class="flex h-full w-full items-start justify-center bg-gradient-to-br from-gold-50 via-cream to-gold-200 pt-[22%]">
+                                <svg class="h-10 w-20 text-gold-400" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12c0-4 3-7 7-7 7 0 12 14 19 14 4 0 7-3 7-7s-3-7-7-7c-7 0-12 14-19 14-4 0-7-3-7-7Z" transform="translate(3.5 0)"/></svg>
+                            </div>
                         @endif
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-12">
                             <h3 class="font-serif text-lg !text-white sm:text-xl">{{ $cat->name }}</h3>

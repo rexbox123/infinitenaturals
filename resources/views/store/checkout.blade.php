@@ -153,7 +153,7 @@
                     @foreach ($cart->items as $item)
                         <li class="flex gap-3 py-3">
                             <div class="relative h-16 w-14 shrink-0 overflow-hidden rounded-lg bg-gold-50">
-                                <x-store.product-image :product="$item->variant->product" class="h-full w-full object-cover text-[0px]" />
+                                <x-store.product-image :product="$item->variant->product" class="h-full w-full object-cover" compact />
                                 <span class="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[0.65rem] font-bold text-white">{{ $item->quantity }}</span>
                             </div>
                             <div class="flex-1 text-sm">

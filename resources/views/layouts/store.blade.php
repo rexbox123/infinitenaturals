@@ -37,7 +37,7 @@
     </div>
 @endforeach
 
-<header x-data="{ menu: false, search: false }" class="sticky top-0 z-40 border-b border-gold-200 bg-white/95 backdrop-blur">
+<header x-data="{ menu: false, search: false }" class="sticky top-0 z-40 border-b border-gold-200 bg-white">
     <div class="container-store flex h-16 items-center justify-between gap-3 sm:h-20">
         <div class="flex flex-1 items-center gap-2 lg:hidden">
             <button type="button" @click="menu = true" class="-ml-2 rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Open menu">
@@ -50,10 +50,10 @@
 
         <a href="{{ route('home') }}" class="shrink-0" aria-label="{{ $storeName }} home"><x-application-logo /></a>
 
-        <nav class="hidden flex-1 items-center justify-center gap-7 text-sm font-semibold uppercase tracking-wider text-stone-700 lg:flex" aria-label="Main">
+        <nav class="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap text-[0.8rem] font-semibold uppercase tracking-wider text-stone-700 lg:flex xl:gap-7" aria-label="Main">
             <a href="{{ route('shop') }}" class="hover:text-umber-700 {{ request()->routeIs('shop') ? 'text-umber-700' : '' }}">Shop all</a>
             @foreach ($navCategories as $navCategory)
-                <a href="{{ route('category.show', $navCategory) }}" class="hover:text-umber-700 {{ request()->is('product-category/'.$navCategory->slug) ? 'text-umber-700' : '' }}">{{ $navCategory->name }}</a>
+                <a href="{{ route('category.show', $navCategory) }}" class="hidden hover:text-umber-700 xl:inline {{ request()->is('product-category/'.$navCategory->slug) ? 'text-umber-700' : '' }}">{{ $navCategory->name }}</a>
             @endforeach
             <a href="{{ url('/about-us') }}" class="hover:text-umber-700">About</a>
             <a href="{{ route('contact') }}" class="hover:text-umber-700">Contact</a>

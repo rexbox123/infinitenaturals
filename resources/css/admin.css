@@ -4,3 +4,7 @@
 trix-toolbar .trix-button-group--file-tools { display: none; }
 trix-editor { min-height: 12rem; background: #fff; border-radius: 0.5rem; border-color: #d6d3d1; }
 trix-editor:focus { outline: 2px solid #6e1900; outline-offset: 1px; }
+
+/* Let the toolbar wrap on phones instead of widening the page. */
+trix-toolbar .trix-button-row { flex-wrap: wrap; row-gap: 0.25rem; }
+trix-editor { max-width: 100%; overflow-wrap: anywhere; }

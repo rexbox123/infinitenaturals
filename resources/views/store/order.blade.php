@@ -70,7 +70,7 @@
                     @foreach ($order->items as $item)
                         <li class="flex items-center gap-4 py-4">
                             <div class="h-16 w-14 shrink-0 overflow-hidden rounded-lg bg-gold-50">
-                                @if ($item->variant?->product)<x-store.product-image :product="$item->variant->product" class="h-full w-full object-cover text-[0px]" />@endif
+                                @if ($item->variant?->product)<x-store.product-image :product="$item->variant->product" class="h-full w-full object-cover" compact />@endif
                             </div>
                             <div class="flex-1 text-sm">
                                 <p class="font-semibold">{{ $item->displayName() }}</p>

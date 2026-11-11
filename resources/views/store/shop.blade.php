@@ -46,8 +46,8 @@
                     <input id="max" type="number" inputmode="decimal" min="0" step="1" name="max" value="{{ $filters['max'] ?? '' }}" placeholder="Max" class="input w-24">
                 </fieldset>
                 <div class="flex items-center gap-5 pb-2">
-                    <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="in_stock" value="1" @checked(! empty($filters['in_stock'])) class="rounded border-stone-300 text-umber-700 focus:ring-umber-700"> In stock</label>
-                    <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="on_sale" value="1" @checked(! empty($filters['on_sale'])) class="rounded border-stone-300 text-umber-700 focus:ring-umber-700"> On sale</label>
+                    <label class="flex items-center gap-2 whitespace-nowrap text-sm"><input type="checkbox" name="in_stock" value="1" @checked(! empty($filters['in_stock'])) class="rounded border-stone-300 text-umber-700 focus:ring-umber-700"> In stock</label>
+                    <label class="flex items-center gap-2 whitespace-nowrap text-sm"><input type="checkbox" name="on_sale" value="1" @checked(! empty($filters['on_sale'])) class="rounded border-stone-300 text-umber-700 focus:ring-umber-700"> On sale</label>
                 </div>
                 <div class="flex gap-2">
                     <button class="btn-primary btn-sm">Apply</button>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="flex items-end gap-4">
-                <p class="hidden pb-2 text-sm text-stone-600 lg:block">{{ $products->total() }} {{ Str::plural('product', $products->total()) }}</p>
+                <p class="hidden whitespace-nowrap pb-2 text-sm text-stone-600 lg:block">{{ $products->total() }} {{ Str::plural('product', $products->total()) }}</p>
                 <div class="w-full lg:w-auto">
                     <label for="sort" class="label">Sort by</label>
                     <select id="sort" name="sort" class="input" onchange="this.form.submit()">

@@ -27,7 +27,7 @@
 
     <form method="post" action="{{ $isNew ? route('admin.products.store') : route('admin.products.update', $product) }}" class="grid gap-6 xl:grid-cols-[1fr_340px]">
         @csrf @unless($isNew) @method('put') @endunless
-        <div class="space-y-6">
+        <div class="min-w-0 space-y-6">
             <x-admin.card title="Details">
                 <div class="grid gap-4 sm:grid-cols-2">
                     <x-admin.field name="name" label="Name" :value="$product->name" required class="sm:col-span-2" />
@@ -50,7 +50,7 @@
                 </div>
             </x-admin.card>
 
-            <x-admin.card title="Variants, prices &amp; stock">
+            <x-admin.card title="Variants, prices & stock">
                 <div x-data="{ rows: {{ Js::from($rows) }}, add() { this.rows.push({ id: null, name: '', sku: '', price: '', sale_price: '', sale_starts_at: '', sale_ends_at: '', stock: 0, stock_original: null, track_inventory: true, is_active: true, weight_grams: '' }) } }" class="space-y-4">
                     <p class="text-sm text-stone-600">Each variant is a purchasable option (e.g. a size). Products with one option use a single “Default” variant. Stock edits here are recorded in the inventory history; use <a class="underline" href="{{ route('admin.inventory.index') }}">Inventory</a> to restock with a reason.</p>
                     <template x-for="(row, i) in rows" :key="i">
@@ -87,7 +87,7 @@
             </x-admin.card>
         </div>
 
-        <div class="space-y-6">
+        <div class="min-w-0 space-y-6">
             <x-admin.card title="Visibility">
                 <div class="space-y-4">
                     <div>
