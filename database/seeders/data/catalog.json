@@ -1,0 +1,213 @@
+{
+  "_source": "Scraped from https://www.infinitenaturals.com on 2026-11-11 (WooCommerce product pages and Store API).",
+  "categories": [
+    {
+      "name": "Body Soaps",
+      "slug": "body-soaps",
+      "sort_order": 0
+    },
+    {
+      "name": "Cleansers & Toners",
+      "slug": "cleansers-toners",
+      "sort_order": 1
+    },
+    {
+      "name": "Face Serums",
+      "slug": "face-serums",
+      "sort_order": 2
+    },
+    {
+      "name": "Moisturizers",
+      "slug": "moisturizers",
+      "sort_order": 3
+    }
+  ],
+  "products": [
+    {
+      "slug": "rejuvenating-serum",
+      "name": "Rejuvenating Serum",
+      "category": "face-serums",
+      "price_cents": 6900,
+      "variant_name": "Default",
+      "featured": true,
+      "sort_order": 0,
+      "short_description": "Experience the ultimate Vitamin C complex Serum with Vitamin E that drenched skin in a cocktail of dynamic multi source antioxidants which help Moisturize the skin.",
+      "description": "<p>Experience the ultimate Vitamin C complex Serum with Vitamin E that drenched skin in a cocktail of dynamic multi source antioxidants which help Moisturize the skin.</p>\n<p>Sodium Ascorbyl Phosphate, Kakadu Plum, Phloretin, Astaxanthin, Ferulic Acid and Vitamin E offer restorative nourishment to skin which has become compromised over time.</p>\n<p><strong>Direction:</strong></p>\n<p>AM and PM apply 2 to 3 drops of serum to the face and decollete following thorough cleansing of the skin. Allow to absorb.</p>\n<p><strong>Skin Type:</strong></p>\n<p>MATURE, HYPERPIGMENTED, ALL SKIN TYPES</p>",
+      "benefits": "<p><strong>Benefits:</strong></p>\n<p>• Phloretin – A powerful anti-oxidant.</p>\n<p>• Sodium Ascorbyl Phosphate – Highly effective water-soluble anti-oxidant. Acts as a collagen biosynthesis regulator, helping to trigger collagen production. Also helps to prevent the breakdown of cells due to environmental exposure. Anti-inflammatory properties soothe damaged skin.</p>\n<p>• Astaxanthin – Strong anti-oxidant vitamin, 550 times more powerful than vitamin E.</p>\n<p>• Ferulic Acid – Is an anti-oxidant that neutralizes free radicals and helps to prevent damage to cells caused by ultraviolet light. Exposure to ultraviolet light increases the anti-oxidant potency of ferulic acid.</p>\n<p>• Emblica® – Derived from Phyllanthus Emblica fruit. It is a free cascading anti-oxidant that promotes skin lightening reducing hyperpigmentation. Emblica® is completely free of pro-oxidation activity utilizing a multilevel cascade of anti-oxidant resulting in a prolongation of its anti-oxidant capabilities including the protection against photo-damage.</p>\n<p>• Kakadu Plum – Has the highest naturally occurring vitamin C content of any fruit. It contains 3000mg of vitamin C per 100g of fruit – over 50 times the concentration found in oranges.</p>",
+      "ingredients": "<p><strong>Ingredients:</strong></p>\n<p>Aqua (Purified Water), Alcohol Denat, Propanediol, Glycerin, Aqua (and) Butylene Glycol (and) Ethoxydiglycol (and) Ferula Assa-Foetida Extract, Aqua (and) Sodium Hyaluronate (and) Gluconolactone (and) Sodium Benzoate, Terminalia Ferdinandiana Fruit Extract, Emblica Officinalis Fruit Extract, Panthenol, Polysorbate-20, 1,2-Hexanediol (and) Caprylyl Glycol (and) Tropolone, Sodium Ascorbyl Phosphate, Hydroxyethylcellulose, Tocopherol, Polyglyceryl-6 Caprylate (and) Polyglyceryl-3 Cocoate (and) Polyglyceryl-4 Caprate (and) Polyglyceryl-6 Ricinoleate, Ferulic Acid, Tocopheryl Acetate, Sodium Hydroxide, Pentaerythrityl Tetraisostearate (and) Caprylic/Capric Triglyceride (and) Stearalkonium Hectorite (and) Propylene Carbonate (and) Palmitoyl Tripeptide-1, Astaxanthin, Phloretin.</p>\n<p><em>For informational purposes only. All formulas are subject to change. Please refer to the ingredient list on the product’s individual packaging.</em></p>",
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/rejuvenating-serum.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Top-Bottle-.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Skincare-Group.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/rejuvenating-serum/"
+    },
+    {
+      "slug": "multi-vitamin-serum",
+      "name": "Multi Vitamin Serum",
+      "category": "face-serums",
+      "price_cents": 6900,
+      "variant_name": "Default",
+      "featured": true,
+      "sort_order": 1,
+      "short_description": "Refresh and awaken a radiant glow with this Vitamin-rich intensive facial oil. An intoxicating blend of exotic essential oils, nurturing plant oils, luminosity defining actives and a multi-vitamin complex elevates and promotes a radiant , supple complexion.",
+      "description": "<p>Refresh and awaken a radiant glow with this Vitamin-rich intensive facial oil. An intoxicating blend of exotic essential oils, nurturing plant oils, luminosity defining actives and a multi-vitamin complex elevates and promotes a radiant , supple complexion.</p>\n<p>Restore Dehydrated Skin, Promotes Radiant Glow with Kukui &amp; Watermelon Oil</p>\n<p><strong>Directions</strong><strong>:</strong></p>\n<p>Following cleansing, dispense 1-2 drops of Facial Oil onto clean fingertips and lightly sweep over face, neck and decolletage with upward and outward movement. Allow to absorb.</p>\n<p><strong>Skin Type:</strong></p>\n<p>MATURE, DEHYDRATED, ALL SKIN TYPES</p>",
+      "benefits": "<p><strong>Benefits:</strong></p>\n<p>• Ascorbyl Tetraisopalmitate – Is a newly developed esterified derivative from Vitamin C with highest stability among all Vitamin C derivatives. It can be absorbed and transferred into Vitamin C effectively. It is a useful anti-oxidant.</p>\n<p>• Lumiskin™ – Is a solution of diacetyl-boldine and caprylic/capric triglycerides that inhibit the activity of tyrosinase. It is used for its skin lightening properties.</p>\n<p>• Aleurites Moluccana (Kukui) Seed Oil – Kukui Nut Oil is rich in fatty acids such as linoleic acid and oleic acid which can help hydrate, calm skin, and reduce inflammation. It’s a great ingredient for dry, mature skin.</p>\n<p>• Citrullus Lanatus (Watermelon) Seed Oil – Kalahari Melon Oil, also referred to as wild watermelon seed oil, is cold-pressed extracted from the African Citrullus lanatus species. The Kalahari melon is an ancestor of the watermelon that is commercially distributed. This virgin oil has a golden yellow appearance with a mild aroma, and an omega-6 fatty acid content comparable to that of evening primrose oil, making it an ideal ingredient in skincare formulations. It has natural moisturizing and emollient properties. The oil that is extracted from the seeds of the Kalahari melon yields an oil naturally high in linoleic acid, the fatty acid known for its skincare benefits.</p>",
+      "ingredients": "<p><strong>Ingredients:</strong></p>\n<p>Helianthus Annuus (Sunflower) Seed Oil, Caprylic/capric Triglyceride, Diacetyl Boldine, Argania Spinosa Kernel Oil, Tetrahexyldecyl Ascorbate, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Tocopheryl Acetate, Aleurites Moluccanus Seed Oil, Hippophae Rhamnoides Fruit Oil, Citrullus Lanatus (Watermelon) Seed Oil, Citrus Aurantium Dulcis (Orange) Peel Oil, Lavandula Angustifolia Lavender) Oil, Ocimum Basilicum (Basil) Oil, Borago Officinalis Seed Oil, Retinyl Palmitate, Glycine Soja (Soybean) Oil, Tocopherol.</p>\n<p><em>For informational purposes only. All formulas are subject to change. Please refer to the ingredient list on the product’s individual packaging.</em></p>",
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/multi-vitamin-serum.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Top-Bottle-2-scaled.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Skincare-Group.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/multi-vitamin-serum/"
+    },
+    {
+      "slug": "rejuvenating-cream-open",
+      "name": "Rejuvenating Cream",
+      "category": "moisturizers",
+      "price_cents": 6900,
+      "variant_name": "Default",
+      "featured": true,
+      "sort_order": 2,
+      "short_description": "Experience the intense moisturizing, fortifying benefits of Peptide and antioxidant rich creme that helps to support a nourished, hydrated, glowing complexion.",
+      "description": "<p>Experience the intense moisturizing, fortifying benefits of Peptide and antioxidant rich creme that helps to support a nourished, hydrated, glowing complexion.</p>\n<p>Lightweight and fast absorbing, this daily creme is recommended for those who seek protection for environmental stressors that cause dry skin, with a cocktail of natural source antioxidants that further hydrate moisture deficient skin.</p>\n<p><strong>Direction:</strong></p>\n<p>Following cleansing and toning, apply moisturizer on face and neck and decollete. Allow several minutes for full penetration.</p>\n<p><strong>Skin Type:</strong></p>\n<p>MATURE, HYPERPIGMENTED, ALL SKIN TYPES</p>",
+      "benefits": "<p><strong>Benefits:</strong></p>\n<p>• SculptessenceTM – Purified polyholosides derived from Linseed. It offers skin stability and remodeling benefits.</p>\n<p>• Phloretin – A powerful anti-oxidant. • Kakadu Plum Extract – provides powerful anti-oxidant/free radical scavenging support and protection from the effects of UV exposure.</p>\n<p>• Fision Instant LiftTM – boosts elasticity, firmness and radiance.</p>\n<p>• Corum Peptide 8813TM is a lipopeptide that stimulates collagen and glycosaminoglycan synthesis.</p>",
+      "ingredients": "<p><strong>Ingredients:</strong></p>\n<p>Aqua (Purified Water), Glycerin, Helianthus Annuus Seed Oil, Cetearyl Alcohol (and) Polysorbate 60, Caprylic/capric Triglyceride, Arachidyl Alcohol (and) Behenyl Alcohol (and) Arachidyl Glucoside, Beeswax, Propanediol, Cetearyl Alcohol (and) Polysorbate 60, Glyceryl Stearate, Butyrospermum Parkii (Shea) Butter, Jojoba Esters (and) Acacia Decurrens Flower Wax (and) Helianthus Annuus (Sunflower) Seed Wax (and) Polyglyceryl-3, Lauryl Lactate, Terminalia Ferdinandiana Fruit Extract, Emblica Officinalis Extract, Aqua (and) Hydrolyzed Soy Protein (and) Acacia Senegal Gum (and) Xanthan Gum, Aqua (and) Honey (and) Phospholipids (and) Sphingolipids (and) Hyaluronic Acid, Sodium Hydroxide, 1,2-Hexanediol (and) Caprylyl Glycol (and) Tropolone, Allantoin, Cetyl Alcohol, Ricinus Communis (Castor) Seed Oil, Sodium Ascorbyl Phosphate, Ferulic Acid, Magnesium Ascorbyl Phosphate, Tocopheryl Acetate, Aqua (and) Sodium Hyaluronate (and) Gluconolactone (and) Sodium Benzoate, Aqua (and) Butylene Glycol (and) Ethoxydiglycol (and) Ferula Assa-Foetida Extract, Aqua (and) Euterpe Oleracea Berry Extract (and) Aronia Arbutifolia/Aronia Melanocarpa Berry Extract (and) Vaccinium Myrtillus Fruit Extract (and) Lycium Barbarum Berry Extract (and) Garcinia Mangostana Fruit Extract (and) Aristotelia Chilensis Fruit Extract (and) Morinda Citrifolia Fruit Extract, Aqua (and) Glycerin (and) Linum Usitatissimum (Linseed) Seed Extract, Glycerin (and) Aqua (and) Cucumis Sativa (Cucumber) Peel Extract (and) Gluconolactone (and) Sodium Benzoate, Glycerin (and) Aqua (and) Hydroxypropyl Cyclodextrin (and) Palmitoyl Tripeptide-38, Panthenol, Arginine, Pentaerythrityl Tetraisostearate (and) Caprylic/Capric Triglyceride (and) Stearalkonium Hectorite (and) Propylene Carbonate (and) Palmitoyl Tripeptide-1, Pentaerythrityl Tetradi-t-butyl Hydroxyhydrocinnamate, Tetrasodium Glutamate Diacetate, Salvia Sclarea (Clary) Oil, Melaleuca Alternifolia (Tea Tree) Oil, Lavandula Hybrida Oil, Pelargonium Graveolens Flower Oil, Maltodextrin (and) Syringa Vulgaris (Lilac) Flower Extract, Phloretin.</p>\n<p><em>For informational purposes only. All formulas are subject to change. Please refer to the ingredient list on the product’s individual packaging.</em></p>",
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/rejuvenating-cream.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Rejuvenating-Cream-Open-1.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Skincare-Group.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/rejuvenating-cream-open/"
+    },
+    {
+      "slug": "hyaluronic-cleanser",
+      "name": "Hyaluronic Cleanser",
+      "category": "cleansers-toners",
+      "price_cents": 3700,
+      "variant_name": "Default",
+      "featured": false,
+      "sort_order": 3,
+      "short_description": "Replenish hydration with this complexion perfecting cleanser that offers natural Moisturize factors that optimize natural glow, nourished skin and suppleness.",
+      "description": "<p>Replenish hydration with this complexion perfecting cleanser that offers natural Moisturize factors that optimize natural glow, nourished skin and suppleness.</p>\n<p>Gentle, Moisturize &amp; Optimize Natural Glow.</p>\n<p><strong>Direction:</strong></p>\n<p>Apply to dry or damp face and neck with light, upward strokes and over closed eyes with gentle circular motions.</p>\n<p>Rinse thoroughly with warm water or remove with damp cloth pads.</p>\n<p><strong>Skin Type:</strong></p>\n<p>MATURE, DRY/SENSITIVE, ALL SKIN TYPES</p>",
+      "benefits": "<p><strong>Feature Ingredients:</strong></p>\n<p>• Glycoderm P – Is an intensive hydration complex. It is a liposomal delivery of unique moisturizing factors which have a beneficial effect on the epidermis based on its supply of phospholipids and ceramides, which result in a restoration of the typical “brick-and-mortar“ structure of the skin.</p>",
+      "ingredients": "<p><strong>Ingredients:</strong></p>\n<p>Aqua (Purified Water), Helianthus Annuus (Sunflower) Seed Oil, Arachidyl Alcohol, Behenyl Alcohol, Arachidyl Glucoside, Glycerin, Fucus Vesiculosus (Bladderwrack) Extract, Macrocystis Pyrifera Extract, Chondrus Crispus Extract, Palmaria Palmata Extract, Aloe Barbadensis Leaf Juice, Cetearyl Alcohol, Persea Gratissima (Avocado) Oil, Glyceryl Stearate, Lauryl Lactate, Butyrospermum Parkii (Shea) Butter, Niacinamide, Glycerin, Trehalose, Urea, Serine, Pentylene Glycol, Glyceryl Polyacrylate, Algin, Caprylyl Glycol, Sodium Hyaluronate, Pullulan, Disodium Phosphate, Potassium Phosphate, Decyl Glucoside, Lauryl Glucoside, Alcohol, Citric Acid, Ananas Sativus (Pineapple) Fruit Extract, Citrus Aurantium Amara (Bitter Orange) Flower, Citrus Nobilis (Mandarin Orange) Fruit Extract, Citrus Grandis (Grapefruit) Peel Extract, Citrus Tangerina (Tangerine) Peel Extract, 1,2-Hexanediol, Caprylyl Glycol, Tropolone, Theobroma Cacao (Cocoa) Seed Butter, Panthenol, Acetyl Octapeptide-3, Honey, Phospholipids, Sphingolipids, Hyaluronic Acid, Euphorbia Cerifera (Candelilla) Wax, Yeast Extract (Pseudo Collagen), Hyaluronic Acid, Artemisia Umbelliformis Extract, Lauryl Glucoside, Polyglyceryl-2 Dipolyhydroxystearate, Argania Spinosa Extract, Sorbitol, Dicaprylyl Ether, Tocopheryl Acetate, Spiraea Ulmaria Extract, Bioflavonoids.</p>\n<p><em>For informational purposes only. All formulas are subject to change. Please refer to the ingredient list on the product’s individual packaging.</em></p>",
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/hyaluronic-cleanser.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Top-Bottle-.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Skincare-Group.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/hyaluronic-cleanser/"
+    },
+    {
+      "slug": "hyaluronic-toner",
+      "name": "Hyaluronic Toner",
+      "category": "cleansers-toners",
+      "price_cents": 3700,
+      "variant_name": "Default",
+      "featured": false,
+      "sort_order": 4,
+      "short_description": "Hydrate, restore and nourish with this marine and Hyaluronic Acid-rich Toner that boosts the effectiveness of your skin with naturally occurring proteins, trace elements, vitamins and minerals to fortify and nourish moisture-deficient skin.",
+      "description": "<p>Hydrate, restore and nourish with this marine and Hyaluronic Acid-rich Toner that boosts the effectiveness of your skin with naturally occurring proteins, trace elements, vitamins and minerals to fortify and nourish moisture-deficient skin.</p>\n<p><strong>Direction</strong>:</p>\n<p>After cleansing, apply toner with cotton pad to hydrate skin and remove residue from cleanser, makeup or hard water.</p>\n<p>Follow with appropriate protective treatment for skin type.</p>\n<p><strong>Skin Type:</strong></p>\n<p>MATURE, DRY/SENSITIVE, ALL SKIN TYPES</p>",
+      "benefits": "<p><strong>Benefits:</strong></p>\n<p>• Phytocoll duplicates the aesthetics of mammalian collagen while delivering enhanced levels of moisture.</p>\n<p>• Glycoderm P – Is an intensive hydration complex. It is a liposomal delivery of unique moisturizing factors which have a beneficial effect on the epidermis based on its supply of phospholipids and ceramides, which result in a restoration of the typical “brick-and-mortar“ structure of the skin.</p>\n<p>• Sodium PCA is a natural moisturizing factor.</p>\n<p>• Acqua-Biomin Copper Y3 is a protein-complexed mineral that provides smoothing, moisturizing and cell-renewing capabilities.</p>",
+      "ingredients": "<p><strong>Ingredients:</strong></p>\n<p>Aqua (Purified Water), Polyglyceryl-6 Caprylate, Polyglyceryl-3 Cocoate, Polyglyceryl-4 Caprate, Polyglyceryl-6 Ricinoleate, Sodium PCA, Yeast Extract (Pseudo Collagen), 1,2-Hexanediol, Caprylyl Glycol, Fucus Vesiculosus Extract, Macrocystis Pyrifera Extract, Chondrus Crispus Extract, Palmaria Palmata Extract, Hydroxyacetophenone, Bioflavonoids, Butylene Glycol, Saccharomyces/Copper Ferment, Allantoin, Hyaluronic Acid, Borago Officinalis Seed Oil, Aloe Barbadensis Leaf Juice, Acetyl Octapeptide-3, Decyl Glucoside, Lauryl Glucoside, Alcohol, Citric Acid, Ananas Sativus (Pineapple) Fruit Extract, Citrus Aurantium Amara (Bitter Orange) Flower Extract, Citrus Aurantium Dulcis (Orange) Peel Extract, Citrus Nobilis (Mandarin) Fruit Extract, Citrus Grandis (Grapefruit) Peel Extract, Citrus Tangerina (Tangerine) Peel Extract.</p>\n<p><em>For informational purposes only. All formulas are subject to change. Please refer to the ingredient list on the product’s individual packaging.</em></p>",
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/hyaluronic-toner.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Top-Bottle-.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Skincare-Group.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/hyaluronic-toner/"
+    },
+    {
+      "slug": "rose-and-honeysuckle-150g",
+      "name": "Rose and Honeysuckle 5.3 oz",
+      "category": "body-soaps",
+      "price_cents": 850,
+      "variant_name": "5.3 oz / 150g",
+      "featured": false,
+      "sort_order": 5,
+      "short_description": "Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over your skin, lather and enjoy the delightful enticing scent.",
+      "description": "<p>Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over your skin, lather and enjoy the delightful enticing scent.</p>\n<p>5.3 oz / 150g</p>\n<p>Made in France</p>",
+      "benefits": null,
+      "ingredients": null,
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/rose-and-honeysuckle.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Rose-and-Honeysuckle-150g-1.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Grouped-Bar-Soap-150g-.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/rose-and-honeysuckle-150g/"
+    },
+    {
+      "slug": "rose-and-lavender-150g",
+      "name": "Rose and Lavender 5.3 oz",
+      "category": "body-soaps",
+      "price_cents": 850,
+      "variant_name": "5.3 oz / 150g",
+      "featured": false,
+      "sort_order": 6,
+      "short_description": "Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over your skin, lather and enjoy the delightful enticing scent.",
+      "description": "<p>Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over your skin, lather and enjoy the delightful enticing scent.</p>\n<p>5.3 oz / 150g</p>\n<p>Made in France</p>",
+      "benefits": null,
+      "ingredients": null,
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/rose-and-lavender-1.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Rose-and-Lavender-150g-1.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Grouped-Bar-Soap-150g-.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/rose-and-lavender-150g/"
+    },
+    {
+      "slug": "rose-and-peony-150g",
+      "name": "Rose and Peony 5.3 oz",
+      "category": "body-soaps",
+      "price_cents": 850,
+      "variant_name": "5.3 oz / 150g",
+      "featured": false,
+      "sort_order": 7,
+      "short_description": "Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over your skin, lather and enjoy the delightful enticing scent.",
+      "description": "<p>Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over your skin, lather and enjoy the delightful enticing scent.</p>\n<p>5.3 oz / 150g</p>\n<p>Made in France</p>",
+      "benefits": null,
+      "ingredients": null,
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/rose-and-peony.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Rose-and-Peony-150g-1.jpg",
+        "https://www.infinitenaturals.com/wp-content/uploads/2023/05/Infinite-Naturals-Grouped-Bar-Soap-150g-.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/rose-and-peony-150g/"
+    },
+    {
+      "slug": "honeysuckle-shower-gel",
+      "name": "Shower Gel Honeysuckle",
+      "category": "body-soaps",
+      "price_cents": 1649,
+      "variant_name": "10 fl oz / 300 ml",
+      "featured": false,
+      "sort_order": 8,
+      "short_description": "The rejuvenating natural ingredients of Honeysuckle cleanse and soften the skin. A rich blend of nature-derived properties uplifts the mood with mild sweet refreshing fragrance.",
+      "description": "<p>The rejuvenating natural ingredients of Honeysuckle cleanse and soften the skin. A rich blend of nature-derived properties uplifts the mood with mild sweet refreshing fragrance.</p>\n<p><strong>10 fl oz / 300 ml</strong></p>\n<p><strong>Product of France</strong></p>",
+      "benefits": null,
+      "ingredients": null,
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2022/05/Honeysuckle-Liquid-Soap-1.jpg"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/honeysuckle-shower-gel/"
+    },
+    {
+      "slug": "heart-soap-rose",
+      "name": "Heart Soap Rose",
+      "category": "body-soaps",
+      "price_cents": 999,
+      "variant_name": "3.5 oz / 100g",
+      "featured": false,
+      "sort_order": 9,
+      "short_description": "Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over skin, lather and enjoy the delightful enticing scent.",
+      "description": "<p>Infinite Naturals gentle body soap contains nourishing shea extract to help cleanse and moisturize your skin. Apply evenly over skin, lather and enjoy the delightful enticing scent.</p>\n<p><strong>3.5 oz / 100g</strong></p>\n<p><strong>Product of France</strong></p>",
+      "benefits": null,
+      "ingredients": null,
+      "images": [
+        "https://www.infinitenaturals.com/wp-content/uploads/2022/04/heart-soap-rose.png"
+      ],
+      "source_url": "https://www.infinitenaturals.com/product/heart-soap-rose/"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+@import 'trix/dist/trix.css';
+
+/* Admin rich-text editor: no file attachments (images are managed separately). */
+trix-toolbar .trix-button-group--file-tools { display: none; }
+trix-editor { min-height: 12rem; background: #fff; border-radius: 0.5rem; border-color: #d6d3d1; }
+trix-editor:focus { outline: 2px solid #6e1900; outline-offset: 1px; }
