@@ -19,7 +19,7 @@ The admin dashboard shows a live "Before you go live" list for most of them.
 | Item | Notes |
 |---|---|
 | **Product photos** | The old site's images are hotlink-protected and could not be copied, so products show a branded placeholder. Export them or upload new ones per product. |
-| **Logo files** | The site shows a text wordmark until a logo is uploaded (Admin → Settings). A transparent PNG/SVG of the current logo is ideal. |
+| **Logo files** | The header shows a script-font wordmark until the logo is uploaded (Admin → Settings). Upload the current coloured logo (`InfiniteNaturals_logo.png`) and, optionally, the white version (`InfiniteNaturals_white.png`) used over the homepage photo — both are in `wp-content/uploads`. |
 | **Hero / promotion images** | The homepage hero and "Say Goodbye to Dry Skin" promotion use brand-colour backgrounds until images are uploaded (Admin → Banners). |
 | **Stock levels** | The old site showed "in stock" without quantities, so all products start at **0 (sold out)**. Enter real counts in Admin → Inventory. |
 | **SKUs** | None on the old site. Optional but recommended. |

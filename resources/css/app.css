@@ -27,4 +27,31 @@
     .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.25em] text-gold-700; }
     .section-title { @apply font-serif text-3xl text-ink sm:text-4xl; }
     .divider-gold { @apply mx-auto my-4 h-px w-16 bg-gold-400; }
+
+    /* Script wordmark shown until the real logo is uploaded (Admin → Settings). */
+    .logo-wordmark { font-family: 'Great Vibes', cursive; @apply inline-block whitespace-nowrap text-[1.9rem] font-normal leading-none; }
+
+    /* Site header — mirrors the current infinitenaturals.com theme: a 120px bar (transparent over
+       the homepage photo, white elsewhere) that becomes a 70px white bar after scrolling. */
+    .site-header-bar { @apply absolute inset-x-0 top-0 z-40 h-[120px] bg-white; }
+    .site-header-bar.header-light { background-color: rgba(10, 10, 10, 0.2); }
+    .site-header-bar.is-stuck { @apply fixed h-[70px] bg-white shadow-[0_1px_0_rgba(0,0,0,0.06)]; animation: header-drop 0.3s ease-out; }
+    .site-logo img { height: 77px; width: auto; }
+    .site-logo .logo-wordmark { @apply text-[2.4rem]; }
+    .is-stuck .site-logo img { height: 52px; }
+    .is-stuck .site-logo .logo-wordmark { @apply text-[2rem]; }
+    .site-header-bar .logo-light { display: none; }
+    .header-light:not(.is-stuck) .logo-light { display: block; }
+    .header-light:not(.is-stuck) .logo-dark { display: none; }
+
+    .site-nav a { @apply relative whitespace-nowrap px-3.5 py-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-black transition-colors hover:text-gold-600 xl:px-[29px]; }
+    .site-nav a[aria-current="page"] { @apply text-gold-600; }
+    .site-nav a[aria-current="page"] > span:first-child { @apply underline decoration-1 underline-offset-[7px]; }
+    .header-light:not(.is-stuck) .site-nav a { @apply text-white hover:text-white/75; }
+    .header-light:not(.is-stuck) .site-nav a[aria-current="page"] { @apply text-white/80; }
+}
+
+@keyframes header-drop {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }

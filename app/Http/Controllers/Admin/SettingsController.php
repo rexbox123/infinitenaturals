@@ -37,6 +37,8 @@ class SettingsController extends Controller
             'store_social_instagram' => ['nullable', 'url:https', 'max:255'],
             'logo' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp,svg', 'max:2048'],
             'remove_logo' => ['boolean'],
+            'logo_light' => ['nullable', 'image', 'mimes:png,webp,svg', 'max:2048'],
+            'remove_logo_light' => ['boolean'],
             'payments_cod_instructions' => ['nullable', 'string', 'max:1000'],
             'inventory_low_stock_threshold' => ['required', 'integer', 'min:0', 'max:1000'],
         ]);
@@ -58,12 +60,14 @@ class SettingsController extends Controller
             'inventory.low_stock_threshold' => (int) $data['inventory_low_stock_threshold'],
         ];
 
-        if ($request->boolean('remove_logo') && ($old = $settings->get('store.logo_path'))) {
-            Storage::disk('public')->delete($old);
-            $values['store.logo_path'] = null;
-        }
-        if ($request->hasFile('logo')) {
-            $values['store.logo_path'] = $request->file('logo')->store('branding', 'public');
+        foreach (['logo' => 'store.logo_path', 'logo_light' => 'store.logo_light_path'] as $field => $key) {
+            if ($request->boolean("remove_{$field}") && ($old = $settings->get($key))) {
+                Storage::disk('public')->delete($old);
+                $values[$key] = null;
+            }
+            if ($request->hasFile($field)) {
+                $values[$key] = $request->file($field)->store('branding', 'public');
+            }
         }
 
         $settings->setMany($values);

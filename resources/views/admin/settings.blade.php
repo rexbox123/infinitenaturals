@@ -11,7 +11,13 @@
                     <label class="label" for="logo">Logo</label>
                     @if ($s('store.logo_path'))<img src="{{ Storage::disk('public')->url($s('store.logo_path')) }}" alt="Logo" class="mb-2 h-12"><x-admin.checkbox name="remove_logo" label="Remove logo (use text wordmark)" class="mb-2" />@endif
                     <input id="logo" type="file" name="logo" accept="image/*" class="text-sm">
-                    <p class="mt-1 text-xs text-stone-500">PNG or SVG with a transparent background, about 400×120 px.</p>
+                    <p class="mt-1 text-xs text-stone-500">PNG or SVG with a transparent background, about 400×180 px. Used in the white header bar.</p>
+                </div>
+                <div>
+                    <label class="label" for="logo_light">White logo (optional)</label>
+                    @if ($s('store.logo_light_path'))<img src="{{ Storage::disk('public')->url($s('store.logo_light_path')) }}" alt="White logo" class="mb-2 h-12 rounded bg-stone-700 p-1"><x-admin.checkbox name="remove_logo_light" label="Remove white logo" class="mb-2" />@endif
+                    <input id="logo_light" type="file" name="logo_light" accept="image/png,image/webp,image/svg+xml" class="text-sm">
+                    <p class="mt-1 text-xs text-stone-500">Shown over the homepage photo. Without it, the main logo is shown in white.</p>
                 </div>
             </div>
         </x-admin.card>

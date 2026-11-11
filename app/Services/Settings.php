@@ -26,6 +26,7 @@ class Settings
         'store.address' => '3850 SE 58th Ave, Ocala, FL 34480',
         'store.order_notification_email' => 'info@infinitenaturals.com',
         'store.logo_path' => null,
+        'store.logo_light_path' => null,
         'store.social_facebook' => null,
         'store.social_instagram' => null,
 

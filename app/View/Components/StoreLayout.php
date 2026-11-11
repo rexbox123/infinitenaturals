@@ -13,6 +13,7 @@ class StoreLayout extends Component
         public ?string $image = null,
         public ?string $canonical = null,
         public bool $noindex = false,
+        public bool $overlayHeader = false,
     ) {}
 
     public function render(): View

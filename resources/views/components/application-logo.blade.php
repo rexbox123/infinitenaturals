@@ -1,10 +1,14 @@
-@php($logo = setting('store.logo_path'))
-@if ($logo)
-    <img src="{{ Storage::disk('public')->url($logo) }}" alt="{{ setting('store.name') }}" {{ $attributes->merge(['class' => 'h-10 w-auto']) }}>
+@props(['variant' => 'dark'])
+@php
+    $logo = setting('store.logo_path');
+    $lightLogo = setting('store.logo_light_path');
+    $light = $variant === 'light';
+    $src = $light ? ($lightLogo ?: $logo) : $logo;
+@endphp
+@if ($src)
+    <img src="{{ Storage::disk('public')->url($src) }}" alt="{{ setting('store.name') }}"
+         {{ $attributes->merge(['class' => 'h-14 w-auto'.($light && ! $lightLogo ? ' brightness-0 invert' : '')]) }}>
 @else
-    {{-- Typographic wordmark until the owner uploads the logo in Admin → Settings. --}}
-    <span {{ $attributes->merge(['class' => 'inline-flex flex-col items-center leading-none']) }}>
-        <span class="font-serif text-xl tracking-[0.18em] text-ink sm:text-2xl">INFINITE</span>
-        <span class="mt-1 text-[0.6rem] font-semibold tracking-[0.55em] text-gold-700 sm:text-[0.65rem]">NATURALS</span>
-    </span>
+    {{-- Script wordmark in the style of the current logo, until the owner uploads it in Admin → Settings. --}}
+    <span {{ $attributes->merge(['class' => 'logo-wordmark '.($light ? 'text-white' : 'text-umber-700')]) }}>{{ setting('store.name') }}</span>
 @endif

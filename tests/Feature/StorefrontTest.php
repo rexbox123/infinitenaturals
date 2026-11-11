@@ -30,6 +30,43 @@ class StorefrontTest extends TestCase
             ->assertSee('833-558-5503');
     }
 
+    public function test_header_menu_matches_the_original_site(): void
+    {
+        $this->get('/')->assertOk()
+            ->assertSeeInOrder(['Home', 'About Us', 'Shop', 'Contact Us', 'Terms and Conditions', 'Cart'])
+            ->assertSee('href="'.url('/terms-and-conditions').'"', false)
+            ->assertSee('header-light', false);   // transparent bar over the homepage hero
+
+        $terms = $this->get('/terms-and-conditions')->assertOk()
+            ->assertDontSee('site-header-bar header-light', false);   // white bar on inner pages
+        $this->assertMatchesRegularExpression('#/terms-and-conditions"\s+aria-current="page"#', $terms->getContent());
+    }
+
+    public function test_admin_can_upload_a_white_logo_for_the_homepage_header(): void
+    {
+        \Illuminate\Support\Facades\Storage::fake('public');
+        $admin = $this->user('admin');
+
+        $this->actingAs($admin)->put(route('admin.settings.update'), [
+            'store_name' => 'Infinite Naturals', 'store_email' => 'info@infinitenaturals.com',
+            'inventory_low_stock_threshold' => 5,
+            'logo' => \Illuminate\Http\UploadedFile::fake()->image('logo.png', 400, 180),
+            'logo_light' => \Illuminate\Http\UploadedFile::fake()->image('logo-white.png', 400, 180),
+        ])->assertRedirect()->assertSessionHasNoErrors();
+
+        $light = setting('store.logo_light_path');
+        $this->assertNotNull($light);
+        \Illuminate\Support\Facades\Storage::disk('public')->assertExists($light);
+        $this->get('/')->assertSee($light);
+
+        $this->actingAs($admin)->put(route('admin.settings.update'), [
+            'store_name' => 'Infinite Naturals', 'store_email' => 'info@infinitenaturals.com',
+            'inventory_low_stock_threshold' => 5, 'remove_logo_light' => 1,
+        ])->assertRedirect();
+        \Illuminate\Support\Facades\Storage::disk('public')->assertMissing($light);
+        $this->assertNull(setting('store.logo_light_path'));
+    }
+
     public function test_shop_lists_all_seeded_products_with_real_prices(): void
     {
         $this->get('/shop')->assertOk()

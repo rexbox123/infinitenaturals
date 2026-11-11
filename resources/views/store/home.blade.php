@@ -1,30 +1,30 @@
-<x-store-layout :description="setting('home.intro_body')">
+<x-store-layout :description="setting('home.intro_body')" :overlay-header="$heroes->isNotEmpty()">
     {{-- Hero (Admin → Banners → Homepage hero) --}}
     @if ($heroes->isNotEmpty())
         <section x-data="{ i: 0, n: {{ $heroes->count() }} }" x-init="if (n > 1) setInterval(() => i = (i + 1) % n, 7000)" class="relative overflow-hidden" aria-roledescription="carousel">
             @foreach ($heroes as $hero)
                 <div x-show="i === {{ $loop->index }}" @if(! $loop->first) x-cloak @endif x-transition.opacity.duration.700ms
-                     class="relative flex min-h-[460px] items-center sm:min-h-[560px] {{ $hero->imageUrl() ? '' : 'bg-gradient-to-br from-cream via-gold-50 to-gold-200' }}">
+                     class="relative flex min-h-[460px] items-center sm:min-h-[560px] lg:min-h-[700px] lg:pt-[120px] {{ $hero->imageUrl() ? '' : 'bg-gradient-to-br from-[#6f4336] via-[#a97f72] to-[#d8bdb2]' }}">
                     @if ($hero->imageUrl())
                         <img src="{{ $hero->imageUrl() }}" alt="" class="absolute inset-0 h-full w-full object-cover" @if($loop->first) fetchpriority="high" @endif>
-                        <div class="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/40 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-ink/60 via-ink/25 to-transparent"></div>
                     @else
-                        <svg class="pointer-events-none absolute -right-24 top-1/2 hidden h-[520px] w-[1040px] -translate-y-1/2 text-gold-300/60 md:block" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width=".25" aria-hidden="true"><path d="M4 12c0-4 3-7 7-7 7 0 12 14 19 14 4 0 7-3 7-7s-3-7-7-7c-7 0-12 14-19 14-4 0-7-3-7-7Z" transform="translate(3.5 0)"/></svg>
+                        <svg class="pointer-events-none absolute -right-24 top-1/2 hidden h-[520px] w-[1040px] -translate-y-1/2 text-white/30 md:block" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width=".25" aria-hidden="true"><path d="M4 12c0-4 3-7 7-7 7 0 12 14 19 14 4 0 7-3 7-7s-3-7-7-7c-7 0-12 14-19 14-4 0-7-3-7-7Z" transform="translate(3.5 0)"/></svg>
                     @endif
                     <div class="container-store relative py-16">
-                        <div class="max-w-xl {{ $hero->imageUrl() ? 'text-white' : '' }}">
+                        <div class="max-w-xl text-white">
                             @if ($hero->eyebrow)
-                                <p class="text-xs font-semibold uppercase tracking-[0.25em] {{ $hero->imageUrl() ? 'text-gold-200' : 'text-gold-700' }}">{{ $hero->eyebrow }}</p>
+                                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-200">{{ $hero->eyebrow }}</p>
                             @endif
-                            <h1 class="mt-4 font-serif text-4xl leading-tight sm:text-6xl {{ $hero->imageUrl() ? '!text-white' : '' }}">{{ $hero->title }}</h1>
+                            <h1 class="mt-4 font-serif text-4xl leading-tight !text-white sm:text-6xl">{{ $hero->title }}</h1>
                             @if ($hero->subtitle)
-                                <p class="mt-5 text-lg uppercase tracking-[0.2em] {{ $hero->imageUrl() ? 'text-white/90' : 'text-stone-600' }}">{{ $hero->subtitle }}</p>
+                                <p class="mt-5 text-lg uppercase tracking-[0.2em] text-white/90">{{ $hero->subtitle }}</p>
                             @endif
                             <div class="mt-8 flex flex-wrap gap-3">
                                 @if ($hero->button_url)
                                     <a href="{{ $hero->button_url }}" class="btn-primary">{{ $hero->button_label ?: 'Shop now' }}</a>
                                 @endif
-                                <a href="{{ url('/about-us') }}" class="btn-outline">Our story</a>
+                                <a href="{{ url('/about-us') }}" class="btn border border-white/70 text-white hover:bg-white hover:text-ink">Our story</a>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
             @if ($heroes->count() > 1)
                 <div class="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2">
                     @foreach ($heroes as $hero)
-                        <button type="button" @click="i = {{ $loop->index }}" class="h-2.5 w-2.5 rounded-full" :class="i === {{ $loop->index }} ? 'bg-umber-700' : 'bg-ink/25'" aria-label="Show slide {{ $loop->iteration }}"></button>
+                        <button type="button" @click="i = {{ $loop->index }}" class="h-2.5 w-2.5 rounded-full" :class="i === {{ $loop->index }} ? 'bg-white' : 'bg-white/40'" aria-label="Show slide {{ $loop->iteration }}"></button>
                     @endforeach
                 </div>
             @endif

@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#6e1900">
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=open-sans:400,600,700|prata:400&display=swap" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=open-sans:400,600,700|prata:400|great-vibes:400&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')
 </head>
@@ -37,91 +37,79 @@
     </div>
 @endforeach
 
-<header x-data="{ menu: false, search: false }" class="sticky top-0 z-40 border-b border-gold-200 bg-white">
-    <div class="container-store flex h-16 items-center justify-between gap-3 sm:h-20">
-        <div class="flex flex-1 items-center gap-2 lg:hidden">
-            <button type="button" @click="menu = true" class="-ml-2 rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Open menu">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
-            </button>
-            <button type="button" @click="search = !search" class="rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Search">
-                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
-            </button>
-        </div>
+@php
+    // Same menu as the current infinitenaturals.com site.
+    $menu = [
+        ['label' => 'Home', 'url' => route('home'), 'active' => request()->routeIs('home')],
+        ['label' => 'About Us', 'url' => url('/about-us'), 'active' => request()->is('about-us')],
+        ['label' => 'Shop', 'url' => route('shop'), 'active' => request()->routeIs('shop', 'category.show', 'product.show')],
+        ['label' => 'Contact Us', 'url' => route('contact'), 'active' => request()->routeIs('contact')],
+        ['label' => 'Terms and Conditions', 'url' => url('/terms-and-conditions'), 'active' => request()->is('terms-and-conditions')],
+        ['label' => 'Cart', 'url' => route('cart.show'), 'active' => request()->routeIs('cart.*'), 'count' => $cartCount],
+    ];
+@endphp
 
-        <a href="{{ route('home') }}" class="shrink-0" aria-label="{{ $storeName }} home"><x-application-logo /></a>
-
-        <nav class="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap text-[0.8rem] font-semibold uppercase tracking-wider text-stone-700 lg:flex xl:gap-7" aria-label="Main">
-            <a href="{{ route('shop') }}" class="hover:text-umber-700 {{ request()->routeIs('shop') ? 'text-umber-700' : '' }}">Shop all</a>
-            @foreach ($navCategories as $navCategory)
-                <a href="{{ route('category.show', $navCategory) }}" class="hidden hover:text-umber-700 xl:inline {{ request()->is('product-category/'.$navCategory->slug) ? 'text-umber-700' : '' }}">{{ $navCategory->name }}</a>
-            @endforeach
-            <a href="{{ url('/about-us') }}" class="hover:text-umber-700">About</a>
-            <a href="{{ route('contact') }}" class="hover:text-umber-700">Contact</a>
-        </nav>
-
-        <div class="flex flex-1 items-center justify-end gap-1 sm:gap-2 lg:flex-none">
-            <form action="{{ route('shop') }}" method="get" role="search" class="relative hidden xl:block">
-                <label for="header-search" class="sr-only">Search products</label>
-                <input id="header-search" type="search" name="q" value="{{ request('q') }}" placeholder="Search products" class="w-48 rounded-full border-stone-300 py-2 pl-4 pr-9 text-sm focus:border-umber-700 focus:ring-umber-700">
-                <svg class="pointer-events-none absolute right-3 top-2.5 h-4 w-4 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
-            </form>
-            <button type="button" @click="search = !search" class="hidden rounded-full p-2 text-ink hover:bg-gold-50 lg:inline-flex xl:hidden" aria-label="Search">
-                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
-            </button>
-            @auth
-                <a href="{{ auth()->user()->isStaff() ? route('admin.dashboard') : route('dashboard') }}" class="rounded-full p-2 text-ink hover:bg-gold-50" aria-label="My account">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path stroke-linecap="round" d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
-                </a>
-            @else
-                <a href="{{ route('login') }}" class="rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Sign in">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path stroke-linecap="round" d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
-                </a>
-            @endauth
-            <a href="{{ route('cart.show') }}" class="relative rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Cart, {{ $cartCount }} {{ Str::plural('item', $cartCount) }}">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 8h12l-1 12H7L6 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-                @if ($cartCount > 0)
-                    <span class="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-umber-700 px-1 text-[0.65rem] font-bold text-white">{{ $cartCount }}</span>
-                @endif
-            </a>
-        </div>
+{{-- Phones and tablets: white bar, menu button left, logo centred, cart right. --}}
+<header x-data="{ menu: false }" class="sticky top-0 z-40 border-b border-stone-200 bg-white lg:hidden">
+    <div class="container-store grid h-[70px] grid-cols-[1fr_auto_1fr] items-center">
+        <button type="button" @click="menu = true" class="-ml-2 justify-self-start rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Open menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a href="{{ route('home') }}" aria-label="{{ $storeName }} home"><x-application-logo class="!h-12 sm:!h-14" /></a>
+        <a href="{{ route('cart.show') }}" class="relative -mr-2 justify-self-end rounded-full p-2 text-ink hover:bg-gold-50" aria-label="Cart, {{ $cartCount }} {{ Str::plural('item', $cartCount) }}">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 8h12l-1 12H7L6 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+            @if ($cartCount > 0)
+                <span class="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-umber-700 px-1 text-[0.65rem] font-bold text-white">{{ $cartCount }}</span>
+            @endif
+        </a>
     </div>
 
-    <div x-show="search" x-cloak x-transition class="border-t border-gold-100 bg-white py-3 xl:hidden">
-        <form action="{{ route('shop') }}" method="get" role="search" class="container-store flex gap-2">
-            <label for="mobile-search" class="sr-only">Search products</label>
-            <input id="mobile-search" type="search" name="q" value="{{ request('q') }}" placeholder="Search serums, soaps, ingredients…" class="input rounded-full">
-            <button class="btn-primary btn-sm">Search</button>
-        </form>
-    </div>
-
-    {{-- Mobile menu --}}
-    <div x-show="menu" x-cloak class="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+    <div x-show="menu" x-cloak class="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Menu">
         <div x-show="menu" x-transition.opacity class="absolute inset-0 bg-ink/40" @click="menu = false"></div>
         <nav x-show="menu" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
-             class="relative flex h-full w-80 max-w-[85%] flex-col overflow-y-auto bg-white p-6 shadow-xl" @keydown.escape.window="menu = false">
+             class="relative flex h-full w-80 max-w-[85%] flex-col overflow-y-auto bg-white p-6 shadow-xl" @keydown.escape.window="menu = false" aria-label="Main">
             <div class="mb-6 flex items-center justify-between">
-                <x-application-logo />
+                <x-application-logo class="!h-12" />
                 <button type="button" @click="menu = false" class="rounded-full p-2 hover:bg-gold-50" aria-label="Close menu">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
                 </button>
             </div>
-            <ul class="space-y-1 text-base">
-                <li><a href="{{ route('shop') }}" class="block rounded-lg px-3 py-3 font-semibold hover:bg-gold-50">Shop all</a></li>
-                @foreach ($navCategories as $navCategory)
-                    <li><a href="{{ route('category.show', $navCategory) }}" class="block rounded-lg px-3 py-3 hover:bg-gold-50">{{ $navCategory->name }}</a></li>
+            <ul class="divide-y divide-stone-100 text-[13px] uppercase tracking-[0.15em]">
+                @foreach ($menu as $item)
+                    <li><a href="{{ $item['url'] }}" @if($item['active']) aria-current="page" @endif class="block py-3.5 {{ $item['active'] ? 'text-gold-600' : 'text-stone-500 hover:text-ink' }}">{{ $item['label'] }}@if(($item['count'] ?? 0) > 0) ({{ $item['count'] }})@endif</a></li>
                 @endforeach
             </ul>
-            <ul class="mt-4 space-y-1 border-t border-gold-100 pt-4 text-base">
-                <li><a href="{{ url('/about-us') }}" class="block rounded-lg px-3 py-3 hover:bg-gold-50">About us</a></li>
-                <li><a href="{{ route('contact') }}" class="block rounded-lg px-3 py-3 hover:bg-gold-50">Contact</a></li>
-                <li><a href="{{ route('orders.lookup') }}" class="block rounded-lg px-3 py-3 hover:bg-gold-50">Track your order</a></li>
+            <form action="{{ route('shop') }}" method="get" role="search" class="mt-6">
+                <label for="mobile-search" class="sr-only">Search products</label>
+                <input id="mobile-search" type="search" name="q" value="{{ request('q') }}" placeholder="Search products…" class="input rounded-full">
+            </form>
+            <ul class="mt-6 space-y-3 text-sm text-stone-600">
+                <li><a href="{{ route('orders.lookup') }}" class="hover:text-ink">Track your order</a></li>
                 @auth
-                    <li><a href="{{ route('dashboard') }}" class="block rounded-lg px-3 py-3 hover:bg-gold-50">My account</a></li>
+                    <li><a href="{{ auth()->user()->isStaff() ? route('admin.dashboard') : route('dashboard') }}" class="hover:text-ink">My account</a></li>
                 @else
-                    <li><a href="{{ route('login') }}" class="block rounded-lg px-3 py-3 hover:bg-gold-50">Sign in</a></li>
+                    <li><a href="{{ route('login') }}" class="hover:text-ink">Sign in</a></li>
                 @endauth
             </ul>
         </nav>
+    </div>
+</header>
+
+{{-- Desktop: 120px bar (over the homepage photo, white elsewhere); a 70px white bar slides in on scroll. --}}
+<header class="relative z-40 hidden lg:block {{ $overlayHeader ? 'h-0' : 'h-[120px]' }}"
+        x-data="{ stuck: false }" x-init="stuck = scrollY > 200" @scroll.window.throttle.50ms="stuck = scrollY > 200">
+    <div class="site-header-bar {{ $overlayHeader ? 'header-light' : '' }}" :class="{ 'is-stuck': stuck }">
+        <div class="flex h-full items-center px-8 xl:px-[60px]" :class="stuck ? 'xl:!px-10' : ''">
+            <a href="{{ route('home') }}" class="site-logo shrink-0" aria-label="{{ $storeName }} home">
+                <x-application-logo class="logo-dark" />
+                <x-application-logo variant="light" class="logo-light" />
+            </a>
+            <nav class="site-nav ml-6 flex flex-1" :class="stuck ? 'justify-end' : 'justify-center'" aria-label="Main">
+                @foreach ($menu as $item)
+                    <a href="{{ $item['url'] }}" @if($item['active']) aria-current="page" @endif><span>{{ $item['label'] }}</span>@if(($item['count'] ?? 0) > 0)<span class="ml-1 tracking-normal">({{ $item['count'] }})</span>@endif</a>
+                @endforeach
+            </nav>
+        </div>
     </div>
 </header>
 
@@ -165,6 +153,11 @@
             <h2 class="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">Help</h2>
             <ul class="mt-4 space-y-2 text-sm">
                 <li><a href="{{ route('orders.lookup') }}" class="hover:text-white">Track your order</a></li>
+                @auth
+                    <li><a href="{{ auth()->user()->isStaff() ? route('admin.dashboard') : route('dashboard') }}" class="hover:text-white">My account</a></li>
+                @else
+                    <li><a href="{{ route('login') }}" class="hover:text-white">Sign in / create account</a></li>
+                @endauth
                 @foreach ($footerPages as $footerPage)
                     <li><a href="{{ $footerPage->url() }}" class="hover:text-white">{{ $footerPage->title }}</a></li>
                 @endforeach
