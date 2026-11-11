@@ -73,7 +73,7 @@ class DemoSeeder extends Seeder
             $picked = $variants->random(2);
             $subtotal = $picked->sum('price');
             $order = Order::query()->create([
-                'number' => 'TMP-'.Str::uuid(),
+                'number' => 'TMP-'.Str::random(20),
                 'access_token' => Str::random(48),
                 'user_id' => $i === 0 ? $customer->id : null,
                 'email' => $i === 0 ? $customer->email : "guest{$i}@example.com",

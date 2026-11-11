@@ -68,7 +68,7 @@ class PlaceOrder
                 $isCod = $data['payment_method'] === 'cod';
 
                 $order = Order::query()->create([
-                    'number' => 'TMP-'.Str::uuid(),
+                    'number' => 'TMP-'.Str::random(20),
                     'access_token' => Str::random(48),
                     'user_id' => $userId,
                     'email' => $email,
