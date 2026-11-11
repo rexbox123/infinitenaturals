@@ -16,6 +16,7 @@ class StripeReturnController extends Controller
     /** Customer returns from Stripe after paying. Confirm with Stripe — never trust the redirect alone. */
     public function return(Request $request, Order $order)
     {
+        abort_unless($request->hasValidSignatureWhileIgnoring(['session_id']), 403);
         abort_unless(
             $order->stripe_checkout_session_id && hash_equals($order->stripe_checkout_session_id, (string) $request->query('session_id')),
             404,

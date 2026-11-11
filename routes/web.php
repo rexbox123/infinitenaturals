@@ -42,7 +42,8 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('thro
 
 // Stripe redirects the customer back here. Both URLs are signed; payment state is
 // always confirmed with Stripe server-side, never trusted from the URL.
-Route::get('/checkout/payment/{order:number}/return', [StripeReturnController::class, 'return'])->middleware('signed')->name('checkout.stripe.return');
+// The return URL's signature is checked in the controller because Stripe appends ?session_id=… after signing.
+Route::get('/checkout/payment/{order:number}/return', [StripeReturnController::class, 'return'])->name('checkout.stripe.return');
 Route::get('/checkout/payment/{order:number}/cancel', [StripeReturnController::class, 'cancel'])->middleware('signed')->name('checkout.stripe.cancel');
 Route::post('/orders/{order:number}/pay', [StripeReturnController::class, 'resume'])->name('orders.pay');
 Route::post('/orders/{order:number}/retry', [StripeReturnController::class, 'retry'])->name('orders.retry');

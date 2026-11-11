@@ -19,14 +19,20 @@ class CartService
 
     private ?Cart $cart = null;
 
+    /** Session token + user the cached cart was resolved for. */
+    private ?string $resolvedFor = null;
+
     /** Current cart, or null when the visitor has none yet (no DB write). */
     public function current(): ?Cart
     {
-        if ($this->cart) {
+        $token = session(self::SESSION_KEY);
+        $key = $this->cacheKey();
+
+        if ($this->cart && $this->resolvedFor === $key) {
             return $this->cart;
         }
+        $this->cart = null;
 
-        $token = session(self::SESSION_KEY);
         $cart = $token ? Cart::query()->where('token', $token)->first() : null;
 
         if (! $cart && ($user = auth()->user())) {
@@ -40,6 +46,8 @@ class CartService
             // Never expose a signed-in customer's cart to someone else on this session.
             $cart = null;
         }
+
+        $this->resolvedFor = $this->cacheKey();
 
         return $this->cart = $cart?->load(['items.variant.product.primaryImage', 'discountCode']);
     }
@@ -55,6 +63,7 @@ class CartService
             'user_id' => auth()->id(),
         ]);
         session([self::SESSION_KEY => $cart->token]);
+        $this->resolvedFor = $this->cacheKey();
 
         return $this->cart = $cart->load(['items', 'discountCode']);
     }
@@ -172,6 +181,12 @@ class CartService
         }
 
         return array_values(array_unique($notices));
+    }
+
+    /** The cart is cached only for the current request, session token and user. */
+    private function cacheKey(): string
+    {
+        return spl_object_id(request()).'|'.session(self::SESSION_KEY).'|'.auth()->id();
     }
 
     private function refresh(): void

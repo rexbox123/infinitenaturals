@@ -156,7 +156,8 @@ class ProductController extends Controller
             if ($sale !== null && $sale >= $price) {
                 throw ValidationException::withMessages(["variants.{$i}.sale_price" => 'The sale price must be lower than the regular price.']);
             }
-            if (! empty($row['sku'])) {
+            $row['sku'] = ($row['sku'] ?? null) ?: null;
+            if ($row['sku'] !== null) {
                 $clash = ProductVariant::query()->where('sku', $row['sku'])
                     ->when(! empty($row['id']), fn ($q) => $q->whereKeyNot($row['id']))->exists();
                 if ($clash) {
@@ -167,7 +168,7 @@ class ProductController extends Controller
                 'id' => $row['id'] ?? null,
                 'attributes' => [
                     'name' => $row['name'],
-                    'sku' => $row['sku'] ?: null,
+                    'sku' => $row['sku'],
                     'price' => $price,
                     'sale_price' => $sale,
                     'sale_starts_at' => $row['sale_starts_at'] ?? null,
